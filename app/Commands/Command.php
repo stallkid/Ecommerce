@@ -1,4 +1,4 @@
-<?php namespace App\Commands;
+<?php namespace codecommerce\Commands;
 
 abstract class Command {
 
