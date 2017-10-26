@@ -2,11 +2,8 @@
 
 namespace codecommerce\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use codecommerce\Category;
 use codecommerce\Http\Requests;
-use codecommerce\Http\Controllers\Controller;
 
 class CategoriesController extends Controller
 {
@@ -18,7 +15,7 @@ class CategoriesController extends Controller
     }
     public function index()
     {
-      $categories = $this->categoryModel->all();
+      $categories = $this->categoryModel->paginate(10);
 
       return view('categories.index',compact('categories'));
     }

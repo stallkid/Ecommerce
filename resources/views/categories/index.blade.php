@@ -21,16 +21,18 @@
 
       @foreach ($categories as $category)
         <tr>
-          <th>{{$category->id}}</th>
-          <th>{{$category->name}}</th>
-          <th>{{$category->description}}</th>
-          <th>
+          <td>{{$category->id}}</td>
+          <td>{{$category->name}}</td>
+          <td>{{$category->description}}</td>
+          <td>
               <a href="{{ route('categories.edit', ['id'=>$category->id]) }}">Edit</a>  |
               <a href="{{ route('categories.destroy', ['id'=>$category->id]) }}">Delete</a>
-          </th>
+          </td>
         </tr>
       @endforeach
-
     </table>
+
+      {!! $categories->render() !!}
+
 </div>
 @endsection
